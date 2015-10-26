@@ -9,20 +9,20 @@ default: &default
 development:
   <<: *default
   database: postgreproject_development
-  username: postgreproject
+  username: postgreprogect
   password: 111
   host: localhost
 
 test:
   <<: *default
   database: postgreproject_test
-  username: postgreproject
+  username: postgreprogect
   password: 111
   host: localhost
 
 production:
   <<: *default
   database: postgreproject_production
-  username: postgreproject
+  username: postgreprogect
   password: 111
   host: localhost
