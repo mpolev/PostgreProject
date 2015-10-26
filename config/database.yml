@@ -1,0 +1,28 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: postgreproject_development
+  username: postgreproject
+  password: 111
+  host: localhost
+
+test:
+  <<: *default
+  database: postgreproject_test
+  username: postgreproject
+  password: 111
+  host: localhost
+
+production:
+  <<: *default
+  database: postgreproject_production
+  username: postgreproject
+  password: 111
+  host: localhost
