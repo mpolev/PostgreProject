@@ -5,24 +5,17 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  username: postgres
+  password: 111
 
 development:
   <<: *default
   database: postgreproject_development
-  username: postgreprogect
-  password: 111
-  host: localhost
 
 test:
   <<: *default
   database: postgreproject_test
-  username: postgreprogect
-  password: 111
-  host: localhost
 
 production:
   <<: *default
   database: postgreproject_production
-  username: postgreprogect
-  password: 111
-  host: localhost
