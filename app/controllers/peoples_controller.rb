@@ -1,6 +1,11 @@
 class PeoplesController < ApplicationController
   def Index
     @peoples = Person.all
+
+    @flag = Role::EMPLOYEE | Role::ADMIN
+
+    @role1 = (@flag & Role::EMPLOYEE) == Role::EMPLOYEE
+    @role2 = (@flag & Role::ADMIN) == Role::ADMIN
   end
 
   def New
@@ -9,6 +14,8 @@ class PeoplesController < ApplicationController
 
   def Create
     @person = Person.new(person_params)
+    @person.role = Role::EMPLOYEE
+
     if @person.save
       redirect_to :action => "Index"
     else
