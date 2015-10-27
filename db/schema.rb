@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20151027055833) do
     t.string   "internal_phone"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.integer  "role",           default: 1
+    t.integer  "role",           default: 0
   end
 
 end
