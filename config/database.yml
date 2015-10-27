@@ -16,6 +16,6 @@ development:
 #  <<: *default
 #  database: postgreproject_test
 
-production:
-  <<: *default
-  database: postgreproject_production
+#production:
+#  <<: *default
+#  database: postgreproject_production
