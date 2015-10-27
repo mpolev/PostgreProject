@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027055833) do
+ActiveRecord::Schema.define(version: 20151027143011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "days_meals", force: :cascade do |t|
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "days_meals_dishes", id: false, force: :cascade do |t|
+    t.integer "days_meal_id"
+    t.integer "dish_id"
+  end
+
+  create_table "dishes", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.decimal  "price"
+  end
+
+  create_table "dishes_ingredients", id: false, force: :cascade do |t|
+    t.integer "ingredient_id"
+    t.integer "dish_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +54,13 @@ ActiveRecord::Schema.define(version: 20151027055833) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "role",           default: 0
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

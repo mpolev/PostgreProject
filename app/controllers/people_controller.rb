@@ -2,10 +2,19 @@ class PeopleController < ApplicationController
   def index
     @people = Person.all
 
-    @flag = Role::EMPLOYEE | Role::ADMIN
+    #Пример установления множественной роли
+    #@flag = Role::EMPLOYEE | Role::ADMIN
+    #@role1 = (@flag & Role::EMPLOYEE) == Role::EMPLOYEE
+    #@role2 = (@flag & Role::ADMIN) == Role::ADMIN
 
-    @role1 = (@flag & Role::EMPLOYEE) == Role::EMPLOYEE
-    @role2 = (@flag & Role::ADMIN) == Role::ADMIN
+    #Пример связи многие-ко-многим
+    #@dish = Dish.create(name: "5", description: "6")
+    #@ingredient = Ingredient.create(name: "qqq", description: "222")
+    #@ingredient.dishes << @dish
+
+    #@dish = Dish.create(name: "5", description: "6")
+    #@menu = DaysMeal.create(date: Time.now)
+    #@menu.dishes << @dish
   end
 
   def new
