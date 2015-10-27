@@ -1,9 +1,0 @@
-# encoding: utf-8
-
-<%= form_for @editedPerson, url: {action: "Update"}, method: "post" do |f| %>
-    <%= f.hidden_field :id %>
-    <%= f.text_field :name %>
-    <%= f.text_field :room %>
-    <%= f.text_field :internal_phone %>
-    <%= f.submit "Изменить" %>
-<% end %>

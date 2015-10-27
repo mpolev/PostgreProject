@@ -1,4 +1,4 @@
-module PeoplesHelper
+module PeopleHelper
 end
 
 module Role

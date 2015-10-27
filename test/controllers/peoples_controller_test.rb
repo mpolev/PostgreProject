@@ -1,28 +1,28 @@
 require 'test_helper'
 
 class PeoplesControllerTest < ActionController::TestCase
-  test "should get Index" do
-    get :Index
+  test "should get index" do
+    get :index
     assert_response :success
   end
 
-  test "should get All" do
-    get :All
+  test "should get all" do
+    get :all
     assert_response :success
   end
 
-  test "should get Edit" do
-    get :Edit
+  test "should get edit" do
+    get :edit
     assert_response :success
   end
 
-  test "should get Delete" do
-    get :Delete
+  test "should get delete" do
+    get :delete
     assert_response :success
   end
 
-  test "should get Show" do
-    get :Show
+  test "should get show" do
+    get :show
     assert_response :success
   end
 

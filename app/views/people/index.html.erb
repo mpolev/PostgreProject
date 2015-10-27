@@ -1,0 +1,27 @@
+<%= link_to "Добавить сотрудника", new_person_path %>
+
+<table>
+  <tr>
+    <td>Имя</td>
+    <td>Комната</td>
+    <td>Внутренний телефон</td>
+    <td>Роль</td>
+  </tr>
+  <% for person in @people %>
+      <tr>
+        <td><p><%= person.name %></p></td>
+        <td><p><%= person.room %></p></td>
+        <td><p><%= person.internal_phone %></p></td>
+        <td><p><%= person.role %></p></td>
+        <td><%= link_to "Посмотреть", person_path(person) %></td>
+        <td><%= link_to "Изменить", edit_person_path(person) %></td>
+        <td><%= link_to "Удалить", person_path(person),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
+
+<p><%= @flag %></p>
+<p><%= @role1 %></p>
+<p><%= @role2 %></p>
