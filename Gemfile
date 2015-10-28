@@ -48,4 +48,6 @@ gem 'coffee-script-source', '1.8.0'
 
 gem "rails_12factor", group: :production
 
+gem 'watu_table_builder', '~> 0.3.0'
+
 ruby "2.1.5"

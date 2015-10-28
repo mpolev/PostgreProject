@@ -2,6 +2,10 @@ class PeopleController < ApplicationController
   def index
     @people = Person.all
 
+    @time = Time.now
+    @articles = DaysMeal.all
+    @date = params[:month] ? Date.parse(params[:month]) : Date.today
+
     #ѕример установлени€ множественной роли
     #@flag = Role::EMPLOYEE | Role::ADMIN
     #@role1 = (@flag & Role::EMPLOYEE) == Role::EMPLOYEE
