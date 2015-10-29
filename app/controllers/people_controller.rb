@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
     @people = Person.all
 
     @time = Time.now
-    @articles = DaysMeal.all
+    @meals = DaysMeal.all
     @date = params[:month] ? Date.parse(params[:month]) : Date.today
 
     #ѕример установлени€ множественной роли
@@ -16,8 +16,8 @@ class PeopleController < ApplicationController
     #@ingredient = Ingredient.create(name: "qqq", description: "222")
     #@ingredient.dishes << @dish
 
-    #@dish = Dish.create(name: "5", description: "6")
-    #@menu = DaysMeal.create(date: Time.now)
+    #@dish = Dish.create(name: "5", description: "6", price: 112)
+    #@menu = DaysMeal.create(date: Date.today.prev_day 2)
     #@menu.dishes << @dish
   end
 
